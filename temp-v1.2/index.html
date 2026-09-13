@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Micro-POS & Inventory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>QuickPOS</h2>
+      <nav>
+        <ul>
+          <li class="nav-btn active" onclick="switchTab('pos-tab', this)">POS System</li>
+          <li class="nav-btn" onclick="switchTab('inventory-tab', this)">Inventory</li>
+          <li class="nav-btn" onclick="switchTab('sales-tab', this)">Sales Report</li>
+          <li class="nav-btn" onclick="switchTab('settings-tab', this)">Settings</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- TAB 1: POS SYSTEM -->
+      <section id="pos-tab" class="tab-content active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h4>Today's Sales</h4>
+            <p id="today-sales">৳ 12,450</p>
+          </div>
+          <div class="stat-card">
+            <h4>Items Sold Today</h4>
+            <p id="items-sold">38</p>
+          </div>
+          <div class="stat-card warning">
+            <h4>Low Stock Items</h4>
+            <p id="low-stock">3 Items</p>
+          </div>
+        </div>
+
+        <div class="pos-section">
+          <div class="product-selection">
+            <h3>Products</h3>
+            <div class="product-grid" id="product-list"></div>
+          </div>
+
+          <div class="cart-panel">
+            <div class="cart-header">
+              <h3>Current Invoice</h3>
+              <button class="btn-clear" onclick="clearCart()">Clear Cart</button>
+            </div>
+            
+            <div class="customer-info">
+              <input type="text" id="cust-name" placeholder="Customer Name">
+              <input type="text" id="cust-phone" placeholder="WhatsApp Number (017...)">
+            </div>
+
+            <!-- Cart Items with Delete Option -->
+            <div class="cart-items" id="cart-items">
+              <p class="empty-msg">No items added to cart</p>
+            </div>
+
+            <div class="cart-summary">
+              <div class="summary-row"><span>Total:</span> <span id="cart-total">৳ 0</span></div>
+              <button class="btn-checkout" onclick="generateInvoice()">Create & Send WhatsApp Invoice</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: INVENTORY -->
+      <section id="inventory-tab" class="tab-content">
+        <h2>Inventory Management</h2>
+        <p class="sub-text">এখানে স্টকের সমস্ত প্রডাক্ট দেখা ও নতুন প্রডাক্ট অ্যাড করা যাবে।</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 3: SALES REPORT -->
+      <section id="sales-tab" class="tab-content">
+        <h2>Sales Report</h2>
+        <p class="sub-text">দৈনিক এবং মাসিক মোট বিক্রির হিসাব।</p>
+        <div class="report-cards">
+          <div class="report-box">
+            <h3>Total Orders</h3>
+            <p>154</p>
+          </div>
+          <div class="report-box">
+            <h3>Total Revenue</h3>
+            <p>৳ 85,200</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: SETTINGS -->
+      <section id="settings-tab" class="tab-content">
+        <h2>Shop Settings</h2>
+        <form class="settings-form" onsubmit="event.preventDefault(); alert('Settings Saved!');">
+          <label>Shop Name:</label>
+          <input type="text" value="My Awesome Shop">
+          <label>Currency Symbol:</label>
+          <input type="text" value="৳">
+          <button type="submit" class="btn-checkout">Save Changes</button>
+        </form>
+      </section>
+
+
+      <section class="cta-section">
+        <div class="card">
+          <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+      </section>
+      <section class="cta-section">
+        <div class="card">
+          <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+      </section>
+      <section class="cta-section">
+        <div class="card">
+          <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+        <div class="card">
+           <h1>HEllO World</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sit!</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
