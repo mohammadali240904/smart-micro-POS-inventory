@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1e1b4b;
+  color: #fff;
+  padding: 24px 16px;
+}
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #c084fc;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+}
+.sidebar li.active,
+.sidebar li:hover {
+  background: #312e81;
+  color: #fff;
+}
+
+/* Main Content & Tabs */
+.main-content {
+  flex: 1;
+  padding: 24px;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.sub-text {
+  margin-bottom: 20px;
+  color: #6b7280;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.stat-card.warning {
+  border-left: 4px solid #ef4444;
+}
+.stat-card p {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #4f46e5;
+}
+
+/* POS Grid */
+.pos-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+.product-selection,
+.cart-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.product-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.product-card:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* Cart Styling */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-clear {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.customer-info input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.cart-items {
+  margin: 20px 0;
+  min-height: 150px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-qty {
+  background: #e5e7eb;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-remove {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cart-summary {
+  border-top: 2px solid #f3f4f6;
+  padding-top: 16px;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.btn-checkout {
+  width: 100%;
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Tables & Forms */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table-container th,
+.table-container td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+.table-container th {
+  background: #f9fafb;
+}
+
+.report-cards {
+  display: flex;
+  gap: 20px;
+}
+.report-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.settings-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.settings-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
